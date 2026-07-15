@@ -118,3 +118,126 @@ Techniques used:
 A feedforward neural network was built using TensorFlow/Keras.
 
 ### Architecture
+Input Layer
+|
+Dense Layer (128 units, ReLU)
+|
+Dense Layer (64 units, ReLU)
+|
+Dense Layer (32 units, ReLU)
+|
+Output Layer (1 unit, Sigmoid)
+
+
+Training configuration:
+- Optimizer: SGD
+- Learning Rate: 0.1
+- Loss Function: Binary Crossentropy
+- Epochs: 15
+
+### Performance
+
+| Metric | Score |
+|---|---:|
+| Accuracy | 81.8% |
+| F1 Score | 0.588 |
+
+---
+
+## Model Comparison
+
+| Metric | Logistic Regression | Neural Network |
+|---|---:|---:|
+| Accuracy | 73.1% | **81.8%** |
+| F1 Score | 0.581 | **0.588** |
+
+The neural network achieved higher accuracy and a slightly improved F1 score, suggesting it was able to capture more complex relationships within the Airbnb pricing data. However, the improvement in F1 score was relatively small compared to the added complexity and reduced interpretability.
+
+---
+
+## Key Findings
+
+- Property characteristics such as number of guests accommodated, bedrooms, beds, and bathrooms were strongly associated with price.
+- Location-based features were important predictors but introduced potential fairness concerns.
+- Neural networks improved predictive performance but required more complexity and tuning.
+- Class imbalance remained a challenge, particularly when identifying high-priced listings.
+
+---
+
+## Ethical Considerations
+
+Machine learning models trained on pricing data may unintentionally reinforce existing socioeconomic patterns.
+
+Potential concerns:
+- Location features may act as proxies for socioeconomic characteristics.
+- Historically undervalued neighborhoods could receive inaccurate predictions.
+- Incorrect predictions could cause hosts to underprice or overprice their listings.
+
+Future improvements should consider fairness-aware modeling and careful feature selection.
+
+---
+
+## Future Improvements
+
+Potential improvements include:
+
+- Additional feature engineering:
+  - More detailed location features
+  - Distance from landmarks
+  - Neighborhood-level statistics
+  - Property amenities
+
+- Addressing class imbalance:
+  - Oversampling minority classes
+  - Adjusting classification thresholds
+  - Using specialized imbalance techniques
+
+- Neural network improvements:
+  - Dropout layers
+  - Early stopping
+  - Alternative optimizers
+  - Hyperparameter tuning
+
+- Testing additional models:
+  - Random Forest
+  - Gradient Boosting
+  - XGBoost
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- TensorFlow / Keras
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+---
+
+## Project Structure
+
+
+Airbnb-Price-Prediction/
+│
+├── data/
+│ └── airbnbListingsData.csv
+│
+├── Airbnb_Price_Prediction.ipynb
+│
+├── README.md
+│
+└── requirements.txt
+
+
+---
+
+## Author
+
+Esther Li
+
+Computer Science Student  
+Machine Learning & Data Science Project, originally submitted for Break Through Tech AI program
